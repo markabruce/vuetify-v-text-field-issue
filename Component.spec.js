@@ -24,17 +24,17 @@ describe('Component', () => {
 
     it('Then props should be returned for a v-button Vue instance', async () => {
       const submitButtonWrapper = wrapper.find('#submitButton');
-
-      // Works as expected, v-button is a Vue instance and so I should be able to get
-      // the props
       expect(submitButtonWrapper.props()).toBeDefined();
     });
 
     it('Then props should be returned for a v-text-field Vue instance', async () => {
-      const emailTextFieldWrapper = wrapper.find('#emailTextField');
-
-      // Test crashes when attempting to get props from v-text-field, unlike v-button
-      // which handles getting props as expected.
+      // NOTE: DO NOT use 'id' when finding a v-text-field as the 'id' attribute
+      // is passed down to the <input /> element, meaning that you're no longer
+      // getting the root (Vue instance) of v-text-field anymore, which leads
+      // to the test shitting itself. However, using an id on a v-button does 
+      // work as expected.
+      // https://github.com/vuetifyjs/vuetify/issues/12362
+      const emailTextFieldWrapper = wrapper.find('.v-text-field');
       expect(emailTextFieldWrapper.props()).toBeDefined();
     });
   });

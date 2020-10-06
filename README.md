@@ -1,24 +1,11 @@
-# v-text-field-issue
+# vuetify-v-text-field-issue
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Runs the unit tests
 ```
-npm run serve
+npm run test
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
